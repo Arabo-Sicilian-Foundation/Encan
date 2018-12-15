@@ -15,7 +15,7 @@ void Acheteur::acheter()
 	bool interesse;
 	bool va_acheter;
 	int time = 0;
-	ObjetEncan* achat = nullptr;
+	ObjetGenerique* achat = nullptr;
 
 	while (time < 5000) //10 tours
 	{
@@ -35,7 +35,7 @@ void Acheteur::acheter()
 		}
 		if (va_acheter)
 		{
-			bool a = (Encan::getInstance())->encherir(achat, achat->getObjEnc().get()->getPrixActuel(), nom);
+			bool a = (Encan::getInstance())->encherir(achat, achat->getObjEncan().getPrixActuel(), nom);
 			//rq: getPrixActuel actualise aussi dans objEnchere ;) //# doit 
 			//...
 		}
