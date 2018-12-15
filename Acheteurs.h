@@ -12,23 +12,30 @@ class Acheteur
 {
 public:
 
-	Acheteur(int budget, Etat profil, Description interet)
+	Acheteur(int id, int budget, Etat profil, Description interet)
 	{
-		this->budget = budget;
-		this->interet = interet;
-		this->profil = profil;
+		setID(id);
+		setBudget(budget);
+		setProfil(profil);
+		setInteret(interet);
 	}
 
 	~Acheteur() {};
 
 	void acheter();
 	int probAchat();
+	void setID(int id) { this->id = id; }
+	void setBudget(int budget) { this->budget = budget; }
+	void setInteret(Description interet) { this->interet = interet; }
+	void setProfil(Etat profil) { this->profil = profil; }
+
 	//if (interessant(object))
 	//return;//end of fonction :p 
 	//if ((*interessant)(object))//etc
 	//}//if T::categorie() == objet.categorie() }
 	//void setState(EtatAcheteur etat);
 private:
+	int id;
 	int budget;
 	Etat profil;
 	Description interet;
