@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TypeService.h"
+#include <iostream>
 
 class CaracService
 {

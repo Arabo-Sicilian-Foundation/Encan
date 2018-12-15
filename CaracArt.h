@@ -1,6 +1,7 @@
 #pragma once
 
 #include "TypeArt.h"
+#include <iostream>
 
 class CaracArt
 {

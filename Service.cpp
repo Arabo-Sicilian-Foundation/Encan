@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
-#include "FactoryBetS.h"
+#include "FactoryObjet.h"
 
 Service* Service::callFactory()
 {
-	return FactoryBetS::createService();
+	return FactoryObjet::createService();
 }

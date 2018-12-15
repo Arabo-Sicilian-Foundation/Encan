@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
-#include "FactoryBetS.h"
+#include "FactoryObjet.h"
 
 Antiquite* Antiquite::callFactory()
 {
-	return FactoryBetS::createAntiquite();
+	return FactoryObjet::createAntiquite();
 }

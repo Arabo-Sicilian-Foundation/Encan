@@ -2,6 +2,7 @@
 
 #include "EtatAntiquite.h"
 #include "Periode.h"
+#include <iostream>
 
 class CaracAntiquite
 {

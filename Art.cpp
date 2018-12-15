@@ -1,7 +1,7 @@
 ﻿#include "pch.h"
-#include "FactoryBetS.h"
+#include "FactoryObjet.h"
 
 Art* Art::callFactory()
 {
-	return FactoryBetS::createArt();
+	return FactoryObjet::createArt();
 }
