@@ -3,21 +3,29 @@
 #include <functional>
 #include "ObjetEncan.h"
 
-//#include "Interet.h"
-//en enum #MEF= new EtatPatient etc 
-enum Etat { TRESFORT, FORT, MOYEN, LENT, TRESLENT, nb };
 
 //template <class T>
 class Acheteur
 {
 public:
 
-	Acheteur(int id, int budget, Etat profil, Description interet)
+	enum Etat 
+	{ 
+		TRESFORT,
+		FORT,
+		MOYEN,
+		LENT,
+		TRESLENT,
+		nb
+	};
+
+	Acheteur(int id, std::string nom, int budget, Etat profil, ObjetEncan::typeObjet type)
 	{
 		setID(id);
 		setBudget(budget);
 		setProfil(profil);
 		setInteret(interet);
+		setNom(nom);
 	}
 
 	~Acheteur() {};
@@ -26,18 +34,15 @@ public:
 	int probAchat();
 	void setID(int id) { this->id = id; }
 	void setBudget(int budget) { this->budget = budget; }
-	void setInteret(Description interet) { this->interet = interet; }
+	void setInteret(ObjetEncan::typeObjet interet) { this->interet = interet; }
 	void setProfil(Etat profil) { this->profil = profil; }
+	void setNom(std::string nom) { this->nom = nom; }
 
-	//if (interessant(object))
-	//return;//end of fonction :p 
-	//if ((*interessant)(object))//etc
-	//}//if T::categorie() == objet.categorie() }
-	//void setState(EtatAcheteur etat);
 private:
+	std::string nom;
 	int id;
 	int budget;
 	Etat profil;
-	Description interet;
+	ObjetEncan::typeObjet interet;
 
 };

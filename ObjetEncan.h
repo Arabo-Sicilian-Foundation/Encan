@@ -2,17 +2,20 @@
 #include <list>
 #include "ObjetEnchere.h"
 
-enum Description
-{
-	ART,
-	ANTIQUITE,
-	SERVICE
-};
+
 
 //contenu dans les objets
 class ObjetEncan
 {
 public:
+
+	enum typeObjet
+	{
+		ART,
+		ANTIQUITE,
+		SERVICE
+	};
+
 	ObjetEncan(int prixIni, int prixMin, int minNbEnchere, int maxNbEnchere)
 	{
 		this->prixIni = prixIni;
@@ -27,7 +30,6 @@ public:
 		encheres.push_back(obj);
 	}
 
-	// T* obj) { objet = obj; };
 	~ObjetEncan()
 	{
 		for (auto i : encheres)
@@ -36,10 +38,8 @@ public:
 	}
 
 	int getPrixActuel() const { return prixActuel; }
-	Description getTypeObjet() const { return type; }
-	//T* getObjet() { return objet; }
-	//:
-	//T* objet; //art, antiquite, services etc
+	typeObjet getTypeObjet() const { return type; }
+
 private:
 	int prixIni;
 	int prixMin;
@@ -47,5 +47,5 @@ private:
 	int minNbEnchere;
 	int maxNbEnchere;
 	std::list<ObjetEnchere*> encheres;
-	Description type;
+	typeObjet type;
 };
