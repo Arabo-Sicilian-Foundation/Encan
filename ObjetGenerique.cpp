@@ -15,3 +15,8 @@ ObjetEncan ObjetGenerique::getObjEncan() const
 {
 	
 }
+
+void ObjetGenerique::getInfo()
+{
+	
+}
