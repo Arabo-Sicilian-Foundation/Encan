@@ -2,43 +2,22 @@
 #include <list>
 #include "ObjetEnchere.h"
 
-
-
-//contenu dans les objets
 class ObjetEncan
 {
 public:
+	ObjetEncan();
 
-	enum typeObjet
-	{
-		ART,
-		ANTIQUITE,
-		SERVICE
-	};
-
-	ObjetEncan(int prixIni, int prixMin, int minNbEnchere, int maxNbEnchere)
-	{
-		this->prixIni = prixIni;
-		prixActuel = prixIni;
-		this->prixMin = prixMin;
-		this->minNbEnchere = minNbEnchere;
-		this->maxNbEnchere = maxNbEnchere;
-	}
+	ObjetEncan(int prixIni, int prixMin, int minNbEnchere, int maxNbEnchere);
 
 	void addEnchere(ObjetEnchere* obj)
 	{
 		encheres.push_back(obj);
 	}
 
-	~ObjetEncan()
-	{
-		for (auto i : encheres)
-			delete i;
-		encheres.clear();
-	}
+	~ObjetEncan();
 
 	int getPrixActuel() const { return prixActuel; }
-	typeObjet getTypeObjet() const { return type; }
+	TypeObjet::typeObjet getTypeObjet() const { return type; }
 
 private:
 	int prixIni;
@@ -47,5 +26,5 @@ private:
 	int minNbEnchere;
 	int maxNbEnchere;
 	std::list<ObjetEnchere*> encheres;
-	typeObjet type;
+	TypeObjet::typeObjet type;
 };

@@ -4,7 +4,6 @@
 #include "ObjetEncan.h"
 
 
-//template <class T>
 class Acheteur
 {
 public:

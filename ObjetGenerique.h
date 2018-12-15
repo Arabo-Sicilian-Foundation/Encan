@@ -7,12 +7,13 @@ public:
 	ObjetGenerique();
 	~ObjetGenerique();
 
-	ObjetEncan getObjEncan() const;
-	void getInfo();
+	ObjetEncan getObjEncan() const { return objEncan; }
+	std::string getInfo();
 	std::string getNomVendeur() const { return nomVendeur; }
-	typeObjet getType() const { return type; }
+	TypeObjet::typeObjet getType() const { return type; }
 
 private:
 	std::string nomVendeur;
-	typeObjet type;
+	TypeObjet::typeObjet type;
+	ObjetEncan objEncan;
 };

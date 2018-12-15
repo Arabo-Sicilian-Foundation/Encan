@@ -24,21 +24,6 @@ public:
 		return instance;
 	}
 
-	/*void start() {
-		Affichage_Info<Art> affArt;
-		Affichage_Info<Antiquite> affAntiquite;
-		Affichage_Info<Service> affService;
-		int const NB_VENDEURS_INI = 5;
-		int const NB_ACHETEURS_INI = 5;
-		for (int i = 0; i < NB_VENDEURS_INI; i++)
-			listeVendeurs.push_back(FactoryAV::createVendeurs());
-		for (int i = 0; i < NB_ACHETEURS_INI; i++)
-			listeAcheteurs.push_back(FactoryAV::createAcheteurs());
-
-		affArt(listeObjets);
-		affAntiquite(listeObjets);
-		affService(listeObjets);
-	}*/
 	void pushObjet(ObjetGenerique* o)
 	{
 		listeObjets.push_back(o);
@@ -61,15 +46,15 @@ public:
 	void afficheInformation()
 	{
 		for (auto i : listeObjets)
-			std::cout << i->getInfo();
+		{
+			std::string out = i->getInfo();
+			//std::cout << out;
+		}
 	}
 
-	bool encherir(ObjetGenerique* objet_generique, int prix, std::string nomAcheteur) const
+	bool encherir(ObjetGenerique* objetGenerique, int prix, std::string nomAcheteur) const
 	{
-		//, std::string nomVendeur contenu dans l'objet
-		objet_generique->getObjEnc()->addEnchere(new ObjetEnchere(nomAcheteur, objet_generique->getNomVendeur(),
-			prix));
-		//obj->getCaracG().objEnc.get()->;
+		objetGenerique->getObjEncan().addEnchere(new ObjetEnchere(nomAcheteur, objetGenerique->getNomVendeur(), prix));
 		return true;
 	}
 
@@ -86,17 +71,12 @@ private:
 	//static int const nbObjetsMax = 10;
 
 	std::list<ObjetGenerique*> listeObjets;
-	//std::list<std::shared_ptr<Acheteurs>> listeAcheteurs;
-	//std::list<std::shared_ptr<Vendeurs>> listeVendeurs;
-
 	static std::mutex* mtx;
 	Encan() {
 		temps = 0;
 		std::thread daemon(passerTemps);
 		daemon.detach();
 	}
-	//dans un premier temps en shared_ptr mais si perte de performance importante en pointeur nu 
-	//ou bien Meyer's Singleton
 	static Encan* instance;
 
 	static int temps;

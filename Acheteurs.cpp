@@ -24,7 +24,7 @@ void Acheteur::acheter()
 		Encan::getMutex()->lock();
 		for (auto& i : (Encan::getInstance())->getListeObjet())
 		{
-			if (interet == achat->getTypeObjet())
+			if (interet == achat->getType())
 			{
 				if (probAchat() > rand() / RAND_MAX)
 				{
