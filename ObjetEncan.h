@@ -36,6 +36,7 @@ public:
 	}
 
 	int getPrixActuel() const { return prixActuel; }
+	Description getTypeObjet() const { return type; }
 	//T* getObjet() { return objet; }
 	//:
 	//T* objet; //art, antiquite, services etc
@@ -46,4 +47,5 @@ private:
 	int minNbEnchere;
 	int maxNbEnchere;
 	std::list<ObjetEnchere*> encheres;
+	Description type;
 };

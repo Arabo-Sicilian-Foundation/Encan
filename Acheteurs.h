@@ -1,35 +1,28 @@
 ﻿#pragma once
 
 #include <functional>
-#include "ObjetGenerique.h"
-#include "EtatAcheteur.h"
+#include "ObjetEncan.h"
 
 //#include "Interet.h"
 //en enum #MEF= new EtatPatient etc 
-//enum EtatAcheteur { AGRESSIF, MODERE, PATIENT, RAPIDE, LENT, nb };
-
-//on part sur un template #plus lisible
-//typedef enum ObjetInteresse{ ART, ANTIQUITE,};
+enum Etat { TRESFORT, FORT, MOYEN, LENT, TRESLENT, nb };
 
 //template <class T>
-class Acheteurs
+class Acheteur
 {
 public:
 
-	Acheteurs(int budgetAchat, EtatAcheteur t, std::function<bool(ObjetGenerique&)> interet, std::string nom_acheteur)
+	Acheteur(int budget, Etat profil, Description interet)
 	{
-		budget = budgetAchat;
-		interessant = interet;
-		type = t;
-		nom = nom_acheteur;
+		this->budget = budget;
+		this->interet = interet;
+		this->profil = profil;
 	}
 
-	~Acheteurs()
-	{
-	};
-	std::string getNom() const { return nom; }
-	//return un string, un chifre nevermind ^^
+	~Acheteur() {};
+
 	void acheter();
+	int probAchat();
 	//if (interessant(object))
 	//return;//end of fonction :p 
 	//if ((*interessant)(object))//etc
@@ -37,9 +30,7 @@ public:
 	//void setState(EtatAcheteur etat);
 private:
 	int budget;
-	EtatAcheteur type;
-	std::function<bool(ObjetGenerique&)> interessant;
-	std::string nom;
-	Etat* currentEtat;
+	Etat profil;
+	Description interet;
 
 };
