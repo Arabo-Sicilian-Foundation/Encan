@@ -1,28 +1,33 @@
 ﻿#pragma once
 #include "ObjetGenerique.h"
 #include "ObjetEncan.h"
-#include "CaracSer.h"
-#include "TypeSer.h"
+#include "CaracService.h"
 
 class Service
 {
 public:
 	~Service()
 	{
-	}
+	};
 
-	std::shared_ptr<ObjetGenerique> getObjectGenerique() { return std::make_shared<ObjetGenerique>(myCarac, objEnc); }
+	std::shared_ptr<ObjetGenerique> getObjectGenerique() { return std::make_shared<ObjetGenerique>(carac, objEnc); }
 	static Service* callFactory();
-	static std::string getNomDuProgrammeursAimantCeTypeDObjet() { return "Bah on est que 2...."; }
-private:
 
 	friend class FactoryBetS;
-	std::shared_ptr<ObjetEncan> objEnc;
-	CaracSer myCarac;
 
-	Service(int frais, int tarif, TypeSer type, int xp, std::string nom_vendeur, std::shared_ptr<ObjetEncan> obj)
+private:
+
+
+	std::shared_ptr<ObjetEncan> objEnc;
+	CaracService carac;
+
+	Service(int frais, int tarif, TypeSer type, int xp, std::string nomVendeur, std::shared_ptr<ObjetEncan> obj)
 	{
-		myCarac = { frais, tarif, type, xp, nom_vendeur };
+		carac.setFrais(frais);
+		carac.setExperience(xp);
+		carac.setTarif(tarif);
+		carac.setType(type);
+		carac.setVendeur(nomVendeur);
 		objEnc = obj;
 	}
 };

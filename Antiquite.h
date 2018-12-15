@@ -2,10 +2,8 @@
 #include <string>
 #include "ObjetGenerique.h"
 #include "ObjetEncan.h"
-#include "CaracAnt.h"
+#include "CaracAntiquite.h"
 #include "TypeAnt.h"
-#include "Periode.h"
-#include "StructEtat.h"
 
 class Antiquite
 {
@@ -14,9 +12,9 @@ public:
 	{
 	}
 
-	std::shared_ptr<ObjetGenerique> getObjectGenerique() { return std::make_shared<ObjetGenerique>(myCarac, objEnc); }
+	std::shared_ptr<ObjetGenerique> getObjectGenerique() { return std::make_shared<ObjetGenerique>(carac, objEnc); }
 	static Antiquite* callFactory();
-	static std::string getNomDuProgrammeursAimantCeTypeDObjet() { return "Pierre-Jean l'ancien"; }
+
 	friend class FactoryBetS;
 private:
 
@@ -27,12 +25,16 @@ private:
 
 	std::shared_ptr<ObjetEncan> objEnc;
 
-	CaracAnt myCarac;
+	CaracAntiquite carac;
 
-	Antiquite(std::string description, StructEtat etat_, Periode periode, int valeur, std::string nom_vendeur,
+	Antiquite(std::string description, StructEtat etat_, Periode periode, int valeur, std::string nomVendeur,
 		std::shared_ptr<ObjetEncan> obj)
 	{
-		myCarac = { description, etat_, periode, valeur, nom_vendeur };
+		carac.setDescription(description);
+		carac.setEtat(etat_);
+		carac.setPeriode(periode);
+		carac.setValeur(valeur);
+		carac.setVendeur(nomVendeur);
 		objEnc = obj;
 	}
 };
