@@ -19,7 +19,7 @@ public:
 		nb
 	};
 
-	Acheteur(int id, std::string nom, int budget, Etat profil, ObjetEncan::typeObjet type)
+	Acheteur(int id, std::string nom, int budget, Etat profil, TypeObjet::typeObjet type)
 	{
 		setID(id);
 		setBudget(budget);
@@ -34,7 +34,7 @@ public:
 	int probAchat();
 	void setID(int id) { this->id = id; }
 	void setBudget(int budget) { this->budget = budget; }
-	void setInteret(ObjetEncan::typeObjet interet) { this->interet = interet; }
+	void setInteret(TypeObjet::typeObjet interet) { this->interet = interet; }
 	void setProfil(Etat profil) { this->profil = profil; }
 	void setNom(std::string nom) { this->nom = nom; }
 
@@ -43,6 +43,6 @@ private:
 	int id;
 	int budget;
 	Etat profil;
-	ObjetEncan::typeObjet interet;
+	TypeObjet::typeObjet interet;
 
 };
