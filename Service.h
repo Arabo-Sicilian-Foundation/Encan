@@ -8,20 +8,14 @@ class Service
 public:
 	~Service()
 	{
-	};
+	}; 
 
 	std::shared_ptr<ObjetGenerique> getObjectGenerique() { return std::make_shared<ObjetGenerique>(carac, objEnc); }
 	static Service* callFactory();
 
 	friend class FactoryBetS;
 
-private:
-
-
-	std::shared_ptr<ObjetEncan> objEnc;
-	CaracService carac;
-
-	Service(int frais, int tarif, TypeSer type, int xp, std::string nomVendeur, std::shared_ptr<ObjetEncan> obj)
+	Service(int frais, int tarif, TypeService::typeService type, int xp, std::string nomVendeur, std::shared_ptr<ObjetEncan> obj)
 	{
 		carac.setFrais(frais);
 		carac.setExperience(xp);
@@ -30,4 +24,11 @@ private:
 		carac.setVendeur(nomVendeur);
 		objEnc = obj;
 	}
+
+private:
+
+	std::shared_ptr<ObjetEncan> objEnc;
+	CaracService carac;
+
+
 };

@@ -1,9 +1,17 @@
 #pragma once
 
-class TypeSer
+class TypeService
 {
 public:
-	TypeSer();
-	~TypeSer();
+	TypeService();
+	~TypeService();
+
+	enum typeService
+	{
+		MENAGE,
+		ELECTRICITE,
+		PLOMBERIE,
+		VOYAGE
+	};
 };
 

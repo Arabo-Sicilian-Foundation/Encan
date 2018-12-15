@@ -2,11 +2,11 @@
 
 
 
-TypeSer::TypeSer()
+TypeService::TypeService()
 {
 }
 
 
-TypeSer::~TypeSer()
+TypeService::~TypeService()
 {
 }
