@@ -11,7 +11,7 @@ public:
 	std::shared_ptr<AdapterObjet> getObjectGenerique() { return std::make_shared<AdapterObjet>(carac, objEnc); }
 	static Antiquite* callFactory();
 
-	friend class FactoryBetS;
+	friend class FactoryObjet;
 
 	Antiquite(std::string description, EtatAntiquite::etatAntiquite etat_, Periode::periode periode, int valeur, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj)
 	{

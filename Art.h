@@ -11,7 +11,7 @@ public:
 	std::shared_ptr<AdapterObjet> getObjectGenerique() { return std::make_shared<AdapterObjet>(carac, objEnc); }
 	static Art* callFactory();
 
-	friend class FactoryBetS;
+	friend class FactoryObjet;
 
 	Art(int renomee, int valeur, int volume, TypeArt::typeArt type, std::string description, std::string nomVendeur,std::shared_ptr<ObjetEnVente> obj)
 	{
