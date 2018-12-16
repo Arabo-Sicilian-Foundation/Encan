@@ -14,7 +14,7 @@ public:
 	void setRenomee(int renomee_) { renomee = renomee_; };
 	void setType(TypeArt::typeArt typeArt) { type = typeArt; };
 	void setVendeur(std::string nomVendeur_) { nomVendeur = nomVendeur_; };
-private:
+
 	int renomee;
 	int valeur;
 	int volume;

@@ -1,7 +1,5 @@
 ﻿#pragma once
 #include "ObjetGenerique.h"
-#include "ObjetEncan.h"
-#include "CaracService.h"
 
 class Service
 {

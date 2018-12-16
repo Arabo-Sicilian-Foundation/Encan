@@ -14,7 +14,6 @@ public:
 	void setType(TypeService::typeService typeSer) { type = typeSer; };
 	void setVendeur(std::string vendeur) { nomVendeur = vendeur; };
 	 
-private:
 	int frais;
 	int experience;
 	int tarif;

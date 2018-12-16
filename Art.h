@@ -1,8 +1,5 @@
 ﻿#pragma once
-#include <string>
 #include "ObjetGenerique.h"
-#include "ObjetEncan.h"
-#include "CaracArt.h"
 
 class Art
 {

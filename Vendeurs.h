@@ -28,7 +28,6 @@ public:
 		bool vendu = false;
 		while (!vendu)
 		{
-			//template de méthode, l'accès en lecture ne doit pas être fait en même temps qu'une modification sur la liste
 			Encan::getMutex()->lock();
 			vendu = Encan::getInstance()->estVendu(objet.get()->getObjectGenerique().get());
 			Encan::getMutex()->unlock();
@@ -41,8 +40,6 @@ public:
 	{
 		if (!objet_en_enchere)
 			mettreAuxEnchères();
-		//faire sa vie de thread
-		//voir mutex dans acheteurs.cpp
 	}
 
 	//std::string getNom() { return nom; }

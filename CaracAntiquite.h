@@ -15,7 +15,6 @@ public:
 	void setValeur(int valeur_) { valeur = valeur_; };
 	void setVendeur(std::string nomVendeur_) { nomVendeur = nomVendeur_; };
 
-private:
 	std::string description;
 	EtatAntiquite::etatAntiquite etat;
 	Periode::periode periode;
