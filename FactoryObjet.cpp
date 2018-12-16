@@ -41,7 +41,7 @@ std::shared_ptr<Service> FactoryObjet::creeService()
 		new Service(30, 30, TypeService::MENAGE, 20, "Lea", std::make_shared<ObjetEnVente>(40, 50, 2, 15)),
 		new Service(50, 200, TypeService::PLOMBERIE, 50, "Hugo", std::make_shared<ObjetEnVente>(40, 80, 1, 20)),
 		new Service(20, 90, TypeService::VOYAGE, 20, "Michel", std::make_shared<ObjetEnVente>(50, 70, 2, 15)),
-		new Service(10, 40, TypeService::VOYAGE, 40, "Monique", std::make_shared<ObjetEnVente>(30, 40, 3, 10))
+		new Service(10, 40, TypeService::PEINTURE, 40, "Monique", std::make_shared<ObjetEnVente>(30, 40, 3, 10))
 	};
 	return (std::shared_ptr<Service>)service[rand() % 5];
 }
