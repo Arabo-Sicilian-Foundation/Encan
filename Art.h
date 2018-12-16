@@ -4,27 +4,18 @@
 class Art
 {
 public:
-	~Art()
-	{
-	};
+	~Art();
 
-	std::shared_ptr<AdapterObjet> getObjectGenerique() { return std::make_shared<AdapterObjet>(carac, objEnc); }
+	std::shared_ptr<AdapterObjet> getObject() { return std::make_shared<AdapterObjet>(carac, objEnVente); }
 	static Art* callFactory();
 
 	friend class FactoryObjet;
 
-	Art(int renomee, int valeur, int volume, TypeArt::typeArt type, std::string description, std::string nomVendeur,std::shared_ptr<ObjetEnVente> obj)
-	{
-		carac.setDescription(description);
-		carac.setType(type);
-		carac.setRenomee(renomee);
-		carac.setValeur(valeur);
-		carac.setVendeur(nomVendeur);
-		objEnc = obj;
-	};
 
 private:
-	std::shared_ptr<ObjetEnVente> objEnc;
+	Art(int renomee, int valeur, int volume, TypeArt::typeArt type, std::string description, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj);
+
+	std::shared_ptr<ObjetEnVente> objEnVente;
 
 	CaracArt carac;
 };

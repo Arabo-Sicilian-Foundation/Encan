@@ -4,27 +4,18 @@
 class Antiquite
 {
 public:
-	~Antiquite()
-	{
-	}
+	~Antiquite();
 	 
-	std::shared_ptr<AdapterObjet> getObjectGenerique() { return std::make_shared<AdapterObjet>(carac, objEnc); }
+	std::shared_ptr<AdapterObjet> getObject() { return std::make_shared<AdapterObjet>(carac, objEnVente); }
 	static Antiquite* callFactory();
 
 	friend class FactoryObjet;
 
-	Antiquite(std::string description, EtatAntiquite::etatAntiquite etat_, Periode::periode periode, int valeur, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj)
-	{
-		carac.setDescription(description);
-		carac.setEtat(etat_);
-		carac.setPeriode(periode);
-		carac.setValeur(valeur);
-		carac.setVendeur(nomVendeur);
-		objEnc = obj;
-	}
-private:
 
-	std::shared_ptr<ObjetEnVente> objEnc;
+private:
+	Antiquite(std::string description, EtatAntiquite::etatAntiquite etat_, Periode::periode periode, int valeur, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj);
+
+	std::shared_ptr<ObjetEnVente> objEnVente;
 
 	CaracAntiquite carac;
 
