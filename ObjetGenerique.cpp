@@ -3,7 +3,7 @@
 ObjetGenerique::ObjetGenerique()
 {
 }
-ObjetGenerique::ObjetGenerique(CaracAntiquite carac, ObjetEncan objEnc)
+ObjetGenerique::ObjetGenerique(CaracAntiquite carac, std::shared_ptr<ObjetEncan> objEnc)
 {
 	objEncan = objEnc;
 	type = TypeObjet::ANTIQUITE;
@@ -13,7 +13,7 @@ ObjetGenerique::ObjetGenerique(CaracAntiquite carac, ObjetEncan objEnc)
 	nomVendeur = carac.nomVendeur;
 	description = carac.description;
 }
-ObjetGenerique::ObjetGenerique(CaracArt carac, ObjetEncan objEnc)
+ObjetGenerique::ObjetGenerique(CaracArt carac, std::shared_ptr<ObjetEncan> objEnc)
 {
 	objEncan = objEnc;
 	type = TypeObjet::ART;
@@ -24,7 +24,7 @@ ObjetGenerique::ObjetGenerique(CaracArt carac, ObjetEncan objEnc)
 	description = carac.description;
 	volume = carac.volume;
 }
-ObjetGenerique::ObjetGenerique(CaracService carac, ObjetEncan objEnc)
+ObjetGenerique::ObjetGenerique(CaracService carac, std::shared_ptr<ObjetEncan> objEnc)
 {
 	objEncan = objEnc;
 	type = TypeObjet::ART;

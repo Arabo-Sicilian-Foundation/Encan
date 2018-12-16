@@ -9,13 +9,13 @@ class ObjetGenerique
 {
 public:
 	ObjetGenerique();
-	ObjetGenerique(CaracAntiquite carac, ObjetEncan objEnc);
-	ObjetGenerique(CaracArt carac, ObjetEncan objEnc);
-	ObjetGenerique(CaracService carac, ObjetEncan objEnc);
+	ObjetGenerique(CaracAntiquite carac, std::shared_ptr<ObjetEncan> objEnc);
+	ObjetGenerique(CaracArt carac, std::shared_ptr<ObjetEncan> objEnc);
+	ObjetGenerique(CaracService carac, std::shared_ptr<ObjetEncan> objEnc);
 
 	~ObjetGenerique();
 
-	ObjetEncan getObjEncan() const { return objEncan; }
+	std::shared_ptr<ObjetEncan> getObjEncan() const { return objEncan; }
 	std::string getInfo();
 	std::string getNomVendeur() const { return nomVendeur; }
 	TypeObjet::typeObjet getType() const { return type; }
@@ -34,5 +34,5 @@ private:
 	std::string description;
 	std::string nomVendeur;
 	TypeObjet::typeObjet type;
-	ObjetEncan objEncan;
+	std::shared_ptr<ObjetEncan> objEncan;
 };

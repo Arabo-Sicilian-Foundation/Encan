@@ -31,7 +31,6 @@ public:
 
 	bool estVendu(ObjetGenerique* obj)
 	{
-		//TODO: chercher dans la liste la présence de l'objet (moins dégeulasse : avec un id)
 		for (auto i : listeObjets)
 			if (i == obj)
 				return true;
@@ -54,7 +53,7 @@ public:
 
 	bool encherir(ObjetGenerique* objetGenerique, int prix, std::string nomAcheteur) const
 	{
-		objetGenerique->getObjEncan().addEnchere(new ObjetEnchere(nomAcheteur, objetGenerique->getNomVendeur(), prix));
+		objetGenerique->getObjEncan()->addEnchere(new ObjetEnchere(nomAcheteur, objetGenerique->getNomVendeur(), prix));
 		return true;
 	}
 
@@ -68,7 +67,6 @@ public:
 		return mtx;
 	}
 private:
-	//static int const nbObjetsMax = 10;
 
 	std::list<ObjetGenerique*> listeObjets;
 	static std::mutex* mtx;
