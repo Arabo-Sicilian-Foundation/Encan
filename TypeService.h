@@ -11,7 +11,8 @@ public:
 		MENAGE,
 		ELECTRICITE,
 		PLOMBERIE,
-		VOYAGE
+		VOYAGE,
+		PEINTURE
 	};
 };
 

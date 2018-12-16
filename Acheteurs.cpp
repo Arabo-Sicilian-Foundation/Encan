@@ -4,27 +4,27 @@ void Acheteur::acheter()
 {
 
 	bool interesse;
-	bool va_acheter;
+	bool vaAcheter;
 	int time = 0;
 	AdapterObjet* achat = nullptr;
 
 	while (time < 5000) //10 tours
 	{
 		interesse = false;
-		va_acheter = false;
+		vaAcheter = false;
 		Encan::getMutex()->lock();
 		for (auto& i : (Encan::getInstance())->getListeObjet())
 		{
 			if (type == achat->getType())
 			{
-				if (probAchat() > rand() / RAND_MAX)
+				if (probAchat() > rand()%100)
 				{
-					va_acheter = true;
+					vaAcheter = true;
 					break;
 				}
 			}
 		}
-		if (va_acheter)
+		if (vaAcheter)
 		{
 			bool a = (Encan::getInstance())->encherir(achat, achat->getObjet()->getPrixActuel(), nom);
 		}
