@@ -1,6 +1,10 @@
 ﻿#include "pch.h"
 #include "Encan.h"
 
+Encan* Encan::instance;
+std::mutex* Encan::mtx;
+int Encan::temps;
+
 void Encan::passerTemps()
 {
 	while (true)
@@ -9,3 +13,4 @@ void Encan::passerTemps()
 		temps++;
 	}
 }
+

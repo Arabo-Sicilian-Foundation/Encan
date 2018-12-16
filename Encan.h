@@ -60,6 +60,7 @@ public:
 	static int getTemps() { return temps; }
 
 	static void passerTemps();
+
 	static std::mutex* getMutex()
 	{
 		if (mtx == nullptr)
@@ -70,7 +71,9 @@ private:
 
 	std::list<ObjetGenerique*> listeObjets;
 	static std::mutex* mtx;
-	Encan() {
+
+	Encan()
+	{
 		temps = 0;
 		std::thread daemon(passerTemps);
 		daemon.detach();

@@ -4,14 +4,7 @@
 
 void Acheteur::acheter()
 {
-	//std::lock_guard<std::mutex> lock(mutex);
 
-	//=> un seul thread essaiera d'acheter à la fois
-	//entrée en zone critique #utilisation de l'encan
-	//on locke le mutex de l'encan #seul nous allons y avoir accès : pas d'autres acheteurs ni vendeurs #ni vendeurs
-	//car ajout d'une valeur à la liste des objets pendant qu'on la lit : mal 
-	//acheteurs car on va modifier le prix de l'objet selectionne avec les enchères
-	//parallèlle : 2 writers
 	bool interesse;
 	bool va_acheter;
 	int time = 0;
