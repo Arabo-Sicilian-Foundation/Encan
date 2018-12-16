@@ -16,5 +16,5 @@ Acheteur* FactoryAcheteurVendeur::createAcheteur()
 template <class T>
 Vendeurs<T>* FactoryAcheteurVendeur::createVendeurs()
 {
-	return new Vendeurs<T>(T::callFactory(T::getNomDuProgrammeursAimantCeTypeDObjet()));
+	return new Vendeurs<T>(T::callFactory());
 }
