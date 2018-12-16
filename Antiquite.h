@@ -8,7 +8,7 @@ public:
 	~Antiquite();
 	 
 	std::shared_ptr<AdapterObjet> getObjet() { return std::make_shared<AdapterObjet>(carac, objEnVente); }
-	static Antiquite* callFactory();
+	static std::shared_ptr<Antiquite> callFactory();
 
 	friend class FactoryObjet;
 

@@ -10,11 +10,5 @@ Acheteur* FactoryAcheteurVendeur::createAcheteur()
 		new Acheteur(4,"Josh",30,Acheteur::TRESFORT,TypeObjet::ART),
 		new Acheteur(5,"Jeremi",150,Acheteur::TRESLENT,TypeObjet::ANTIQUITE)
 	};
-	return acheteur[static_cast<int>(5 * rand() - 1 / RAND_MAX)];
-}
-
-template <class T>
-Vendeurs<T>* FactoryAcheteurVendeur::createVendeurs()
-{
-	return new Vendeurs<T>(T::callFactory());
+	return acheteur[rand() % 5];
 }

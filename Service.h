@@ -8,7 +8,7 @@ public:
 	~Service(); 
 
 	std::shared_ptr<AdapterObjet> getObjet() { return std::make_shared<AdapterObjet>(carac, objEnVente); }
-	static Service* callFactory();
+	static std::shared_ptr<Service> callFactory();
 
 	friend class FactoryObjet;
 

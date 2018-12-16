@@ -10,7 +10,7 @@ FactoryObjet::~FactoryObjet()
 
 }
 
-Art* FactoryObjet::creeArt()
+std::shared_ptr<Art> FactoryObjet::creeArt()
 {
 	Art* art[5] = {
 		new Art(80, 150, 4, TypeArt::LIVRE, "Le Cid", "Jacques", std::make_shared<ObjetEnVente>(10, 40, 2, 30)),
@@ -19,10 +19,10 @@ Art* FactoryObjet::creeArt()
 		new Art(70, 90, 200, TypeArt::SCULPTURE, "Notre Dame de Paris", "Gustave", std::make_shared<ObjetEnVente>(5, 20, 5, 10)),
 		new Art(10, 50, 5, TypeArt::LIVRE, "Tartufe", "Jean-Baptiste", std::make_shared<ObjetEnVente>(30, 50, 3, 15))
 	};
-	return std::move(art[int(floor(5 * rand() / RAND_MAX))]);
+	return (std::shared_ptr<Art>)art[rand() % 5];
 }
 
-Antiquite* FactoryObjet::creeAntiquite()
+std::shared_ptr<Antiquite> FactoryObjet::creeAntiquite()
 {
 	Antiquite* antiquite[5] = {
 		new Antiquite("Silex", EtatAntiquite::USE, Periode::PREHISTOIRE, 30, "Noah", std::make_shared<ObjetEnVente>(5, 30, 2, 10)),
@@ -31,10 +31,10 @@ Antiquite* FactoryObjet::creeAntiquite()
 		new Antiquite("Guillotine", EtatAntiquite::USE, Periode::MODERNE, 100,"Jacqueline", std::make_shared<ObjetEnVente>(15, 50, 1, 15)),
 		new Antiquite("Fusil", EtatAntiquite::CASSE, Periode::MODERNE, 70,"Suzanne",std::make_shared<ObjetEnVente>(10, 20, 3, 20))
 	};
-	return std::move(antiquite[int(floor(5 * rand() / RAND_MAX))]);
+	return (std::shared_ptr<Antiquite>)antiquite[rand() % 5];
 }
 
-Service* FactoryObjet::creeService()
+std::shared_ptr<Service> FactoryObjet::creeService()
 {
 	Service* service[5] = {
 		new Service(20, 100, TypeService::ELECTRICITE, 90, "Zoe", std::make_shared<ObjetEnVente>(10, 40, 3, 5)),
@@ -43,5 +43,5 @@ Service* FactoryObjet::creeService()
 		new Service(20, 90, TypeService::VOYAGE, 20, "Michel", std::make_shared<ObjetEnVente>(50, 70, 2, 15)),
 		new Service(10, 40, TypeService::VOYAGE, 40, "Monique", std::make_shared<ObjetEnVente>(30, 40, 3, 10))
 	};
-	return std::move(service[int(floor(5 * rand() / RAND_MAX))]);
+	return (std::shared_ptr<Service>)service[rand() % 5];
 }

@@ -11,6 +11,7 @@ void genVendeurAcheteur(std::list<Acheteur*> listeAcheteur, std::list<Vendeurs<A
 {
 	for (int i = 0; i < 5; i++)
 	{
+		
 		listeVendeurArt.push_back(FactoryAcheteurVendeur::createVendeurs<Art>());
 		listeVendeurService.push_back(FactoryAcheteurVendeur::createVendeurs<Service>());
 		listeVendeurAntiquite.push_back(FactoryAcheteurVendeur::createVendeurs<Antiquite>());

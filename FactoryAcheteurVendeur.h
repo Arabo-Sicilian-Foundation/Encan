@@ -9,6 +9,10 @@ class FactoryAcheteurVendeur
 public:
 
 	static Acheteur* createAcheteur();
+
 	template <class T>
-	static Vendeurs<T>* createVendeurs();
+	static Vendeurs<T>* createVendeurs()
+	{
+		return new Vendeurs<T>(T::callFactory());
+	}
 };

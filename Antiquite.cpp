@@ -15,7 +15,7 @@ Antiquite::~Antiquite()
 {
 }
 
-Antiquite* Antiquite::callFactory()
+std::shared_ptr<Antiquite> Antiquite::callFactory()
 {
 	return FactoryObjet::creeAntiquite();
 }

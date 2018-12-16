@@ -15,7 +15,7 @@ Service::~Service()
 {
 }
 
-Service* Service::callFactory()
+std::shared_ptr<Service> Service::callFactory()
 {
 	return FactoryObjet::creeService();
 }

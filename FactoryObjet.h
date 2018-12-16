@@ -13,8 +13,8 @@ public:
 
 	~FactoryObjet();
 
-	static Art* creeArt();
-	static Antiquite* creeAntiquite();
-	static Service* creeService();
+	static std::shared_ptr<Art> creeArt();
+	static std::shared_ptr<Antiquite> creeAntiquite();
+	static std::shared_ptr<Service> creeService();
 
 };

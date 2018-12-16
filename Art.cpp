@@ -15,7 +15,7 @@ Art::~Art()
 {
 };
 
-Art* Art::callFactory()
+std::shared_ptr<Art> Art::callFactory()
 {
 	return FactoryObjet::creeArt();
 }
