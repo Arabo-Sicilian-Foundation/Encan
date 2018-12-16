@@ -1,7 +1,5 @@
 ﻿#pragma once
-#include <list>
 #include "AdapterObjet.h"
-#include <iostream>
 #include <thread>
 #include <mutex>
 

@@ -1,5 +1,4 @@
 ﻿#include "pch.h"
-#include "Encan.h"
 #include "Acheteurs.h"
 
 void Acheteur::acheter()
@@ -8,7 +7,7 @@ void Acheteur::acheter()
 	bool interesse;
 	bool va_acheter;
 	int time = 0;
-	ObjetGenerique* achat = nullptr;
+	AdapterObjet* achat = nullptr;
 
 	while (time < 5000) //10 tours
 	{

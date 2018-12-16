@@ -1,5 +1,5 @@
 ﻿#pragma once
-#include "ObjetGenerique.h"
+#include "AdapterObjet.h"
 
 class Art
 {
@@ -8,7 +8,7 @@ public:
 	{
 	};
 
-	std::shared_ptr<ObjetGenerique> getObjectGenerique() { return std::make_shared<ObjetGenerique>(carac, objEnc); }
+	std::shared_ptr<AdapterObjet> getObjectGenerique() { return std::make_shared<AdapterObjet>(carac, objEnc); }
 	static Art* callFactory();
 
 	friend class FactoryBetS;

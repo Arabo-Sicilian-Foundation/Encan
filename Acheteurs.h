@@ -2,6 +2,7 @@
 
 #include <functional>
 #include "ObjetEnVente.h"
+#include "Encan.h"
 
 
 class Acheteur
