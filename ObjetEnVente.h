@@ -12,6 +12,7 @@ public:
 	void addEnchere(ObjetAVendre* obj)
 	{
 		encheres.push_back(obj);
+		//std::cout << obj->getNomAcheteur() + " encheri de " << getPrixActuel() + "sur l'objet de " + obj->getNomVendeur();
 	}
 
 	~ObjetEnVente();

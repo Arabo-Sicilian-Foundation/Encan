@@ -2,6 +2,7 @@
 #include "AdapterObjet.h"
 #include <thread>
 #include <mutex>
+#include <string>
 
 
 class Encan
@@ -42,10 +43,10 @@ public:
 
 	void afficheInformation()
 	{
-		for (auto i : listeObjets)
+		for (auto i : getListeObjet())
 		{
 			std::string out = i->getInfo();
-			//std::cout << out;
+			std::cout << out;
 		}
 	}
 

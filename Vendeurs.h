@@ -41,6 +41,8 @@ public:
 			mettreAuxEncheres();
 	}
 
+	std::shared_ptr<T> getObjet() const {return objet;}
+
 private:
 	std::shared_ptr<T> objet;
 	bool objetEnEnchere;
