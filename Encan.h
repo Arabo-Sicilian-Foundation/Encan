@@ -51,7 +51,7 @@ public:
 
 	bool encherir(AdapterObjet* objet, int prix, std::string nomAcheteur) const
 	{
-		objet->getObjEncan()->addEnchere(new ObjetAVendre(nomAcheteur, objet->getNomVendeur(), prix));
+		objet->getObjet()->addEnchere(new ObjetAVendre(nomAcheteur, objet->getNomVendeur(), prix));
 		return true;
 	}
 

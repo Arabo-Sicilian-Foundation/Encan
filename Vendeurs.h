@@ -8,7 +8,7 @@ public:
 	Vendeurs(std::shared_ptr<T> objet)
 	{
 		this->objet = objet;
-		objet_en_enchere = false;
+		objetEnEnchere = false;
 	}
 
 	~Vendeurs()

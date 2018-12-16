@@ -26,7 +26,7 @@ void Acheteur::acheter()
 		}
 		if (va_acheter)
 		{
-			bool a = (Encan::getInstance())->encherir(achat, achat->getObjEncan()->getPrixActuel(), nom);
+			bool a = (Encan::getInstance())->encherir(achat, achat->getObjet()->getPrixActuel(), nom);
 		}
 		//sortie de la zone critique
 		Encan::getMutex()->unlock();

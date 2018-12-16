@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "TypeObjet.h"
+#include <iostream>
 
 class ObjetAVendre
 {

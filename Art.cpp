@@ -1,4 +1,5 @@
 ﻿#include "Art.h"
+#include "FactoryObjet.h"
 
 Art::Art(int renomee, int valeur, int volume, TypeArt::typeArt type, std::string description, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj)
 {
