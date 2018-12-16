@@ -33,7 +33,6 @@ public:
 			Encan::getMutex()->unlock();
 			std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		}
-		//faire sa vie de thread
 	}
 
 	void vendre()
@@ -42,7 +41,6 @@ public:
 			mettreAuxEnchères();
 	}
 
-	//std::string getNom() { return nom; }
 private:
 	std::shared_ptr<T> objet;
 	bool objet_en_enchere;

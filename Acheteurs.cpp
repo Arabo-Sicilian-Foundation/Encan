@@ -1,5 +1,4 @@
-﻿#include "pch.h"
-#include "Acheteurs.h"
+﻿#include "Acheteurs.h"
 
 void Acheteur::acheter()
 {

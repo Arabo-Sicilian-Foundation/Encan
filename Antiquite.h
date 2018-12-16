@@ -1,9 +1,11 @@
 ﻿#pragma once
 #include "AdapterObjet.h"
+#include "FactoryObjet.h"
 
 class Antiquite
 {
 public:
+
 	~Antiquite();
 	 
 	std::shared_ptr<AdapterObjet> getObject() { return std::make_shared<AdapterObjet>(carac, objEnVente); }

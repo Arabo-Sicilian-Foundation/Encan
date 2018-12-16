@@ -1,7 +1,8 @@
 ﻿#pragma once
 #include "Acheteurs.h"
 #include "Vendeurs.h"
-#include "pch.h"
+#include <random>
+#include <functional>
 
 class FactoryAcheteurVendeur
 {

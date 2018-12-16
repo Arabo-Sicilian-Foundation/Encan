@@ -16,4 +16,5 @@ public:
 	static Art* creeArt();
 	static Antiquite* creeAntiquite();
 	static Service* creeService();
+
 };

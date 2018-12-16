@@ -1,4 +1,4 @@
-﻿#include "FactoryObjet.h"
+﻿#include "Service.h"
 
 Service::Service(int frais, int tarif, TypeService::typeService type, int xp, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj)
 {

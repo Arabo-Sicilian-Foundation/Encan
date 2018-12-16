@@ -1,6 +1,4 @@
 ﻿#include "FactoryAcheteurVendeur.h"
-#include <random>
-#include <functional>
 
 
 Acheteur* FactoryAcheteurVendeur::createAcheteur()

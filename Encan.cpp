@@ -1,5 +1,4 @@
-﻿#include "pch.h"
-#include "Encan.h"
+﻿#include "Encan.h"
 
 Encan* Encan::instance;
 std::mutex* Encan::mtx;
