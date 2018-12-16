@@ -15,13 +15,13 @@ public:
 	{
 	};
 
-	void mettreAuxEnchères()
+	void mettreAuxEncheres()
 	{
-		while (!objet_en_enchere)
+		while (!objetEnEnchere)
 		{
 			Encan::getMutex()->lock();
-			mettreAuxEnchères();
-			objet_en_enchere = true;
+			mettreAuxEncheres();
+			objetEnEnchere = true;
 			Encan::getMutex()->unlock();
 			std::this_thread::sleep_for(std::chrono::milliseconds(20));
 		}
@@ -29,7 +29,7 @@ public:
 		while (!vendu)
 		{
 			Encan::getMutex()->lock();
-			vendu = Encan::getInstance()->estVendu(objet.get()->getObjectGenerique().get());
+			vendu = Encan::getInstance()->estVendu(objet->getObjet());
 			Encan::getMutex()->unlock();
 			std::this_thread::sleep_for(std::chrono::milliseconds(500));
 		}
@@ -37,12 +37,12 @@ public:
 
 	void vendre()
 	{
-		if (!objet_en_enchere)
-			mettreAuxEnchères();
+		if (!objetEnEnchere)
+			mettreAuxEncheres();
 	}
 
 private:
 	std::shared_ptr<T> objet;
-	bool objet_en_enchere;
+	bool objetEnEnchere;
 };
 

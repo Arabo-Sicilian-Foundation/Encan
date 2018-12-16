@@ -15,7 +15,7 @@ public:
 
 	~AdapterObjet();
 
-	std::shared_ptr<ObjetEnVente> getObjEncan() const { return objEncan; }
+	std::shared_ptr<ObjetEnVente> getObjet() const { return objEncan; }
 	std::string getInfo();
 	std::string getNomVendeur() const { return nomVendeur; }
 	TypeObjet::typeObjet getType() const { return type; }
