@@ -6,15 +6,11 @@
 class FactoryObjet
 {
 public:
-	FactoryObjet()
-	{
-	}
+	FactoryObjet();
 
-	~FactoryObjet()
-	{
-	}
+	~FactoryObjet();
 
-	static Art* createArt();
-	static Antiquite* createAntiquite();
-	static Service* createService();
+	static Art* creeArt();
+	static Antiquite* creeAntiquite();
+	static Service* creeService();
 };

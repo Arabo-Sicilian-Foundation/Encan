@@ -3,5 +3,5 @@
 
 Antiquite* Antiquite::callFactory()
 {
-	return FactoryObjet::createAntiquite();
+	return FactoryObjet::creeAntiquite();
 }

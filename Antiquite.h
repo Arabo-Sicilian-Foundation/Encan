@@ -13,7 +13,7 @@ public:
 
 	friend class FactoryBetS;
 
-	Antiquite(std::string description, EtatAntiquite::etatAntiquite etat_, Periode::periode periode, int valeur, std::string nomVendeur, std::shared_ptr<ObjetEncan> obj)
+	Antiquite(std::string description, EtatAntiquite::etatAntiquite etat_, Periode::periode periode, int valeur, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj)
 	{
 		carac.setDescription(description);
 		carac.setEtat(etat_);
@@ -24,7 +24,7 @@ public:
 	}
 private:
 
-	std::shared_ptr<ObjetEncan> objEnc;
+	std::shared_ptr<ObjetEnVente> objEnc;
 
 	CaracAntiquite carac;
 

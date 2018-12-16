@@ -3,5 +3,5 @@
 
 Art* Art::callFactory()
 {
-	return FactoryObjet::createArt();
+	return FactoryObjet::creeArt();
 }

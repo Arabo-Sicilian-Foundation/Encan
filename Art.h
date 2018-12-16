@@ -13,7 +13,7 @@ public:
 
 	friend class FactoryBetS;
 
-	Art(int renomee, int valeur, int volume, TypeArt::typeArt type, std::string description, std::string nomVendeur,std::shared_ptr<ObjetEncan> obj)
+	Art(int renomee, int valeur, int volume, TypeArt::typeArt type, std::string description, std::string nomVendeur,std::shared_ptr<ObjetEnVente> obj)
 	{
 		carac.setDescription(description);
 		carac.setType(type);
@@ -24,7 +24,7 @@ public:
 	};
 
 private:
-	std::shared_ptr<ObjetEncan> objEnc;
+	std::shared_ptr<ObjetEnVente> objEnc;
 
 	CaracArt carac;
 };

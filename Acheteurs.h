@@ -1,7 +1,7 @@
 ﻿#pragma once
 
 #include <functional>
-#include "ObjetEncan.h"
+#include "ObjetEnVente.h"
 
 
 class Acheteur
@@ -23,7 +23,7 @@ public:
 		setID(id);
 		setBudget(budget);
 		setProfil(profil);
-		setInteret(interet);
+		setType(type);
 		setNom(nom);
 	}
 
@@ -33,7 +33,7 @@ public:
 	int probAchat();
 	void setID(int id) { this->id = id; }
 	void setBudget(int budget) { this->budget = budget; }
-	void setInteret(TypeObjet::typeObjet interet) { this->interet = interet; }
+	void setType(TypeObjet::typeObjet type) { this->type = type; }
 	void setProfil(Etat profil) { this->profil = profil; }
 	void setNom(std::string nom) { this->nom = nom; }
 
@@ -42,6 +42,6 @@ private:
 	int id;
 	int budget;
 	Etat profil;
-	TypeObjet::typeObjet interet;
+	TypeObjet::typeObjet type;
 
 };

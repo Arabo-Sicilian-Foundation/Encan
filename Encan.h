@@ -1,6 +1,6 @@
 ﻿#pragma once
 #include <list>
-#include "ObjetGenerique.h"
+#include "AdapterObjet.h"
 #include <iostream>
 #include <thread>
 #include <mutex>
@@ -24,12 +24,12 @@ public:
 		return instance;
 	}
 
-	void pushObjet(ObjetGenerique* o)
+	void pushObjet(AdapterObjet* o)
 	{
 		listeObjets.push_back(o);
 	}
 
-	bool estVendu(ObjetGenerique* obj)
+	bool estVendu(AdapterObjet* obj)
 	{
 		for (auto i : listeObjets)
 			if (i == obj)
@@ -51,9 +51,9 @@ public:
 		}
 	}
 
-	bool encherir(ObjetGenerique* objetGenerique, int prix, std::string nomAcheteur) const
+	bool encherir(AdapterObjet* objet, int prix, std::string nomAcheteur) const
 	{
-		objetGenerique->getObjEncan()->addEnchere(new ObjetEnchere(nomAcheteur, objetGenerique->getNomVendeur(), prix));
+		objet->getObjEncan()->addEnchere(new ObjetAVendre(nomAcheteur, objet->getNomVendeur(), prix));
 		return true;
 	}
 
@@ -69,7 +69,7 @@ public:
 	}
 private:
 
-	std::list<ObjetGenerique*> listeObjets;
+	std::list<AdapterObjet*> listeObjets;
 	static std::mutex* mtx;
 
 	Encan()

@@ -13,7 +13,7 @@ public:
 
 	friend class FactoryBetS;
 
-	Service(int frais, int tarif, TypeService::typeService type, int xp, std::string nomVendeur, std::shared_ptr<ObjetEncan> obj)
+	Service(int frais, int tarif, TypeService::typeService type, int xp, std::string nomVendeur, std::shared_ptr<ObjetEnVente> obj)
 	{
 		carac.setFrais(frais);
 		carac.setExperience(xp);
@@ -25,7 +25,7 @@ public:
 
 private:
 
-	std::shared_ptr<ObjetEncan> objEnc;
+	std::shared_ptr<ObjetEnVente> objEnc;
 	CaracService carac;
 
 

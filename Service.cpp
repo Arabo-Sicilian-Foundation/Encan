@@ -3,5 +3,5 @@
 
 Service* Service::callFactory()
 {
-	return FactoryObjet::createService();
+	return FactoryObjet::creeService();
 }
